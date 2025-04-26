@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Popup Form</title>
+  <style>
+    /* Popup styles */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+    }
+
+    button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Button to open popup -->
+  <button onclick="openPopup()">Open Form</button>
+
+  <!-- Overlay and popup -->
+  <div id="overlay"></div>
+  <div id="popup">
+    <h3>Enter Your Details</h3>
+    <input type="text" id="field1" placeholder="First Name">
+    <input type="text" id="field2" placeholder="Last Name">
+    <input type="email" id="field3" placeholder="Email">
+    <button onclick="submitForm()">Submit</button>
+    <button onclick="closePopup()">Cancel</button>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+
+    function submitForm() {
+      const field1 = document.getElementById("field1").value;
+      const field2 = document.getElementById("field2").value;
+      const field3 = document.getElementById("field3").value;
+
+      console.log("First Name:", field1);
+      console.log("Last Name:", field2);
+      console.log("Email:", field3);
+
+      // You can also send this data to a server or handle however needed
+      closePopup(); // Close the popup after submission
+    }
+  </script>
+</body>
+</html>

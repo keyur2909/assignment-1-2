@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>Page Title</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel='stylesheet' type='text/css' media='screen' href='Assignment-2.css'>
+   <script src='Assignment-2.js'></script>
+</head>
+
+<body>
+   <div id="main-header">
+      <div class="todotitle">Todo App</div>
+   </div>
+
+   <div class="button-panel">
+      <div class="btn-group" role="group" aria-label="Basic example">
+         <button onclick="showToday()" type="button" class="btn btn-secondary">Today</button>
+         <button onclick="showPending()" type="button" class="btn btn-secondary">Pending</button>
+         <button onclick="showOverdue()" type="button" class="btn btn-secondary">Overdue</button>
+      </div>
+   </div>
+
+   <div id="tasks-panel">
+      <div class="task-h">
+         <div>
+            <div class="task-l">
+               Tasks
+               <span class="task-r">
+                  <button class="btn btn-secondary" type="button" onclick="openPopup()">+ Add Task
+            </div>
+            </span>
+         </div>
+         <div id="task-list" class="task-panel list-group">
+         </div>
+      </div>
+   </div>
+
+   </div>
+
+   <div id="popup">
+      <h3>Task Details</h3>
+      <input type="title" id="title" placeholder="Title">
+      <select name="priority" id="priority">
+         <option value="High">High</option>
+         <option value="Medium">Medium</option>
+         <option value="Low">Low</option>
+      </select>
+      <div>
+         <label for="deadline">Task DeadLine :</label>
+         <input type="date" id="deadline" name="Task Deadline">
+      </div>
+      <input type="comments" id="comments" placeholder="Comments">
+
+      <button onclick="addTask()">Submit</button>
+      <button onclick="closePopup()">Cancel</button>
+   </div>
+</body>
+
+</html>
+
+</html>
